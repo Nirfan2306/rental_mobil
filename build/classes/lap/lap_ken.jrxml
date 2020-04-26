@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="768ffd58-469f-488b-882e-f06bf4cc9cd8">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tb_kendaraan.`nama_mobil` AS tb_kendaraan_nama_mobil,
+     tb_kendaraan.`no_polisi` AS tb_kendaraan_no_polisi,
+     tb_kendaraan.`th_buat` AS tb_kendaraan_th_buat,
+     tb_kendaraan.`jenis_mobil` AS tb_kendaraan_jenis_mobil
+FROM
+     `tb_kendaraan` tb_kendaraan]]>
+	</queryString>
+	<field name="tb_kendaraan_nama_mobil" class="java.lang.String"/>
+	<field name="tb_kendaraan_no_polisi" class="java.lang.String"/>
+	<field name="tb_kendaraan_th_buat" class="java.lang.Integer"/>
+	<field name="tb_kendaraan_jenis_mobil" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="90" splitType="Stretch">
+			<frame>
+				<reportElement mode="Transparent" x="0" y="0" width="451" height="82" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="a8396c15-093c-4d12-9930-2b1b4b295570"/>
+				<staticText>
+					<reportElement style="Title" x="217" y="0" width="142" height="46" forecolor="#000000" uuid="0ae7cf0f-0d17-4768-a02b-bfd1f0418e94"/>
+					<textElement>
+						<font size="36" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Laporan]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="SubTitle" x="228" y="46" width="121" height="29" forecolor="#000000" uuid="558ce77f-db3d-4f81-b5cb-a0987035f56d"/>
+					<textElement>
+						<font size="22" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Kendaraan]]></text>
+				</staticText>
+				<textField pattern="dd MMMMM yyyy">
+					<reportElement x="0" y="0" width="109" height="20" forecolor="#000000" uuid="56483591-5c15-4970-b7c0-39f49c055815"/>
+					<textElement textAlignment="Right">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="0" y="7" width="138" height="18" forecolor="#000000" uuid="4c147f4b-a782-4cbb-9509-cbd2b9c7de31"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mobil]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="138" y="7" width="138" height="18" forecolor="#000000" uuid="e7d6ee08-db17-44aa-8f46-1e1ba7b42945"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[No. Polisi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="276" y="7" width="138" height="18" forecolor="#000000" uuid="27eb0768-3476-4667-9745-3052d6c5a064"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tahun Buat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="414" y="7" width="138" height="18" forecolor="#000000" uuid="042c955f-7406-435b-8e49-d1632f266ec5"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jenis Mobil]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="4229661d-0487-477a-8916-542c6710b926"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField isStretchWithOverflow="true">
+                                <reportElement style="Detail" positionType="Float" x="0" y="0" width="138" height="18" uuid="7c70e4aa-5891-42ae-b55f-97e25f5c3de7"/>
+                                <box>
+                                        <pen lineWidth="1.25"/>
+                                        <topPen lineWidth="1.25"/>
+                                        <leftPen lineWidth="1.25"/>
+                                        <bottomPen lineWidth="1.25"/>
+                                        <rightPen lineWidth="1.25"/>
+                                </box>
+                                <textElement>
+                                        <font size="14"/>
+                                </textElement>
+                                <textFieldExpression><![CDATA[$F{tb_kendaraan_nama_mobil}]]></textFieldExpression>
+                        </textField>
+                        <textField isStretchWithOverflow="true">
+                                <reportElement style="Detail" positionType="Float" x="138" y="0" width="138" height="18" uuid="fe8ad630-e1a3-4bd3-997d-5a7f68b086cb"/>
+                                <box>
+                                        <pen lineWidth="1.25"/>
+                                        <topPen lineWidth="1.25"/>
+                                        <leftPen lineWidth="1.25"/>
+                                        <bottomPen lineWidth="1.25"/>
+                                        <rightPen lineWidth="1.25"/>
+                                </box>
+                                <textElement textAlignment="Center">
+                                        <font size="14"/>
+                                </textElement>
+                                <textFieldExpression><![CDATA[$F{tb_kendaraan_no_polisi}]]></textFieldExpression>
+                        </textField>
+                        <textField isStretchWithOverflow="true">
+                                <reportElement style="Detail" positionType="Float" x="276" y="0" width="138" height="18" uuid="92368492-7889-44f0-94ff-dfb264bf7913"/>
+                                <box>
+                                        <pen lineWidth="1.25"/>
+                                        <topPen lineWidth="1.25"/>
+                                        <leftPen lineWidth="1.25"/>
+                                        <bottomPen lineWidth="1.25"/>
+                                        <rightPen lineWidth="1.25"/>
+                                </box>
+                                <textElement textAlignment="Center">
+                                        <font size="14"/>
+                                </textElement>
+                                <textFieldExpression><![CDATA[$F{tb_kendaraan_th_buat}]]></textFieldExpression>
+                        </textField>
+                        <textField isStretchWithOverflow="true">
+                                <reportElement style="Detail" positionType="Float" x="414" y="0" width="138" height="18" uuid="f85ea26c-bdf8-49ed-bf7c-fecf63fe81f1"/>
+                                <box>
+                                        <pen lineWidth="1.25"/>
+                                        <topPen lineWidth="1.25"/>
+                                        <leftPen lineWidth="1.25"/>
+                                        <bottomPen lineWidth="1.25"/>
+                                        <rightPen lineWidth="1.25"/>
+                                </box>
+                                <textElement textAlignment="Center">
+                                        <font size="14"/>
+                                </textElement>
+                                <textFieldExpression><![CDATA[$F{tb_kendaraan_jenis_mobil}]]></textFieldExpression>
+                        </textField>
+			
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="80333aae-a0e4-4dcc-872b-dc4c443d229c"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
